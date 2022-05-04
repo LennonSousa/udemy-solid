@@ -1,0 +1,10 @@
+{
+  "name": "udemy-solid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "john.costa <john.costa@tecnospeed.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.1.2"
+  }
+}
