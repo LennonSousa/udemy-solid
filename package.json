@@ -5,7 +5,7 @@
   "author": "john.costa <john.costa@tecnospeed.com.br>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
