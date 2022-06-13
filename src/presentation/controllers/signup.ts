@@ -1,9 +1,8 @@
-import { badRequest } from "../helpers/httpHelpers";
+import { badRequest, serverError } from "../helpers/httpHelpers";
 import { Controller } from "../protocols/controller";
 import { EmailValidator } from "../protocols/emailValidator";
 import { InvalidParamError } from "../protocols/errors/invalidParamError";
 import { MissingParamError } from "../protocols/errors/missingParamError";
-import { ServerError } from "../protocols/errors/serverError";
 import { HttpRequest, HttpResponse } from "../protocols/http";
 
 export class SignUpController implements Controller {
@@ -33,10 +32,7 @@ export class SignUpController implements Controller {
         body: null,
       };
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: new ServerError(),
-      };
+      return serverError();
     }
   }
 }
