@@ -1,8 +1,10 @@
 // eslint-disable-next-line max-classes-per-file
 import { EmailValidator } from "../protocols/emailValidator";
-import { InvalidParamError } from "../protocols/errors/invalidParamError";
-import { MissingParamError } from "../protocols/errors/missingParamError";
-import { ServerError } from "../protocols/errors/serverError";
+import {
+  InvalidParamError,
+  ServerError,
+  MissingParamError,
+} from "../protocols/errors";
 import { SignUpController } from "./signup";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
