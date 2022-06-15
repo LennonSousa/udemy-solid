@@ -21,7 +21,7 @@ interface SutTypes {
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
-    add(account: AddAccountModel): AccountModel {
+    async add(account: AddAccountModel): Promise<AccountModel> {
       const fakeAccount = {
         id: "validId",
         name: "valid_name",
@@ -29,7 +29,8 @@ const makeAddAccount = (): AddAccount => {
         password: "valid_password",
       };
 
-      return fakeAccount;
+      // eslint-disable-next-line no-promise-executor-return
+      return new Promise((resolve) => resolve(fakeAccount));
     }
   }
 
@@ -232,7 +233,8 @@ describe("SignUp Controller", () => {
     const addAccount = makeAddAccount();
 
     jest.spyOn(addAccount, "add").mockImplementation(() => {
-      throw new Error();
+      // eslint-disable-next-line no-promise-executor-return
+      return new Promise((_resolve, reject) => reject(new Error()));
     });
 
     const sut = new SignUpController(emailValidatorStub, addAccount);
