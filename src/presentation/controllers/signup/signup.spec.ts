@@ -1,12 +1,16 @@
 // eslint-disable-next-line max-classes-per-file
-import { AccountModel } from "../../domain/models/account";
+import { AccountModel } from "../../../domain/models/account";
 import {
   AddAccount,
   AddAccountModel,
-} from "../../domain/useCases/addAccountUse";
-import { InvalidParamError, ServerError, MissingParamError } from "../errors";
-import { EmailValidator } from "../protocols";
+} from "../../../domain/useCases/addAccountUse";
+import {
+  InvalidParamError,
+  ServerError,
+  MissingParamError,
+} from "../../errors";
 import { SignUpController } from "./signup";
+import { EmailValidator } from "./signupProtocols";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface SutTypes {
