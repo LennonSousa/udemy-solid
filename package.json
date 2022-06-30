@@ -5,7 +5,12 @@
   "author": "john.costa <john.costa@tecnospeed.com.br>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:unit": "jest --passWithNoTests --silent --noStackTrace --watch -c jest-unit-config.js  --runInBand",
+    "test:integration": "jest --passWithNoTests --silent --noStackTrace --watch -c jest-integration-config.js  --runInBand",
+    "test:verbose": "jest --passWithNoTests --watch  --runInBand",
+    "test:staged": "jest --passWithNoTests --silent --noStackTrace --findRelatedTests  --runInBand",
+    "test:ci": "jest --passWithNoTests --silent --noStackTrace --coverage  --runInBand"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
