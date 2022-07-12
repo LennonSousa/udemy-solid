@@ -7,7 +7,7 @@ interface SutTypes {
   encrypterStub: Encrypter;
 }
 
-const makeSut = (): SutTypes => {
+const makeEncrypter = (): Encrypter => {
   class EncrypterStub {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async encrypt(_value: string): Promise<string> {
@@ -17,7 +17,11 @@ const makeSut = (): SutTypes => {
     }
   }
 
-  const encrypterStub = new EncrypterStub();
+  return new EncrypterStub();
+};
+
+const makeSut = (): SutTypes => {
+  const encrypterStub = makeEncrypter();
   const sut = new DbAddAccount(encrypterStub);
 
   return {
