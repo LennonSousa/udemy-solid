@@ -1,5 +1,5 @@
-import { Encrypter } from "../../protocols/encrypter";
 import { DbAddAccount } from "./dbAddAccount";
+import { Encrypter } from "./dbAddAccountProtocols";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface SutTypes {
