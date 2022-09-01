@@ -13,14 +13,6 @@ export class AccountMongoRepository implements AddAccountRepository {
 
     if (!account) throw new Error();
 
-    const accountWithoutId: AccountModel = {
-      // eslint-disable-next-line no-underscore-dangle
-      id: account._id.id.toString(),
-      name: account.name,
-      email: account.email,
-      password: account.password,
-    };
-
-    return accountWithoutId;
+    return MongoHelper.map(account);
   }
 }
