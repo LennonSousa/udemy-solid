@@ -13,8 +13,10 @@
     "test:ci": "jest --passWithNoTests --silent --noStackTrace --coverage  --runInBand"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.1.0",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^27.5.0",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^17.0.31",
     "@types/validator": "^13.7.4",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
@@ -35,6 +37,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "mongodb": "^4.9.1",
     "validator": "^13.7.0"
   }
 }
