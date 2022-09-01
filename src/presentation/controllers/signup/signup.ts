@@ -1,7 +1,7 @@
+import { AddAccount } from "../../../domain/useCases/addAccount";
 import { InvalidParamError, MissingParamError } from "../../errors";
 import { badRequest, ok, serverError } from "../../helpers/httpHelpers";
 import {
-  AddAccount,
   Controller,
   EmailValidator,
   HttpRequest,

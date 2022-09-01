@@ -3,7 +3,7 @@ import { AccountModel } from "../../../domain/models/account";
 import {
   AddAccount,
   AddAccountModel,
-} from "../../../domain/useCases/addAccountUse";
+} from "../../../domain/useCases/addAccount";
 import {
   InvalidParamError,
   ServerError,
@@ -21,7 +21,8 @@ interface SutTypes {
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
-    async add(account: AddAccountModel): Promise<AccountModel> {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async add(_account: AddAccountModel): Promise<AccountModel> {
       const fakeAccount = {
         id: "validId",
         name: "valid_name",
@@ -39,7 +40,8 @@ const makeAddAccount = (): AddAccount => {
 
 const makeEmailValidator = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
-    isValid(email: string): boolean {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    isValid(_email: string): boolean {
       return true;
     }
   }
